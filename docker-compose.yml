@@ -1,0 +1,15 @@
+version: '3'
+services:
+  myapp-prod:
+    image: nginx
+    volumes:
+      - ./dev:/usr/share/nginx/html
+    ports:
+      - "8070:80"
+
+  myapp-dev:
+    image: nginx
+    volumes:
+      - ./prod:/usr/share/nginx/html
+    ports:
+      - "8090:80" 
